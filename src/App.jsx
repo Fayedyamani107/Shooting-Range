@@ -1,12 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/Home.jsx";
 import KoleksiPage from "./pages/Koleksi.jsx";
 import GameDetailsPage from "./pages/GameDetailsPage.jsx";
 import Akun from "./pages/Akun.jsx";
-
 import "./App.css";
 
 function App() {
