@@ -14,7 +14,7 @@ import logoOnic from '../assets/ONIC_Esport.png';
 import logoAlterEgo from '../assets/Alter_Ego.png'; 
 
 import logoNova from '../assets/nova_esports.png';
-import logoTribe from '../assets/Tribe_gaming.png';
+import logoTribe from '../assets/Tribe_Gaming.png';
 import logoTeamQueso from '../assets/Team_queso.png';
 
 
