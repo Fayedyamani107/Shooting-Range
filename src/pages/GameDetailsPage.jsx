@@ -33,7 +33,15 @@ function GameDetailsPage() {
           <p>{game.majorTournaments}</p>
           
           <h3>Tim Terkenal</h3>
-          <p>{game.famousTeams}</p>
+          {/* Bagian yang diubah: Menampilkan logo-logo tim */}
+          <div className="famous-teams-container">
+            {game.famousTeams.map((team, index) => (
+              <div key={index} className="team-logo-item">
+                <img src={team.logo} alt={team.name} className="team-logo" />
+                <p className="team-name">{team.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <img 
           src={game.image} 

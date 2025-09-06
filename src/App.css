@@ -1,4 +1,6 @@
-/* Reset & Base */
+/* ============================= */
+/* Reset & Base                  */
+/* ============================= */
 * {
   margin: 0;
   padding: 0;
@@ -15,13 +17,14 @@ a {
   color: inherit;
 }
 
-
-/* App Layout */
+/* ============================= */
+/* App Layout                    */
+/* ============================= */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #b95429, #8e44ad, #1c2833);
+  background: #101B37;
   color: #fff;
   width: 100%;
 }
@@ -30,11 +33,12 @@ main {
   flex-grow: 1;
 }
 
-
-/* Navbar */
+/* ============================= */
+/* Navbar                        */
+/* ============================= */
 .navbar {
   width: 100%;
-  background: #595a5b !important; 
+  background: #101B37 !important;
   color: #fff;
   display: flex;
   align-items: center;
@@ -60,7 +64,6 @@ main {
   padding: 0;
 }
 
-
 .navbar-link {
   color: #fff;
   text-decoration: none;
@@ -71,7 +74,7 @@ main {
 }
 
 .navbar-link:hover {
-  color: #ff5722;
+  color: #01C8EE;
 }
 
 .navbar-link::after {
@@ -79,7 +82,7 @@ main {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: #ff5722;
+  background: #01C8EE;
   bottom: -5px;
   left: 0;
   transform: scaleX(0);
@@ -99,21 +102,62 @@ main {
   transition: color 0.2s, transform 0.2s;
 }
 
-
 .navbar-icon:hover {
-  color: #ff5722;
+  color: #01C8EE;
   transform: scale(1.1);
 }
 
-
-/* Home Page */
-.home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/* ============================= */
+/* Home Page                     */
+/* ============================= */
+.home-container {
+  min-height: 100vh;
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.36;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+.home-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  max-width: 600px;
+}
+
+.home-character {
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  object-fit: contain;
+  opacity: 0.45;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.home-character.left {
+  left: 0;
+  transform: translateX(-30%);
+}
+
+.home-character.right {
+  right: 0;
+  transform: translateX(30%);
 }
 
 .home-title {
@@ -122,21 +166,16 @@ main {
   margin-bottom: 1rem;
 }
 
-
 .home-text {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   max-width: 600px;
-  color: #ffff ; 
+  color: #fff;
 }
 
-.highlight {
-  color: #ff4500;
-  font-weight: bold;
-}
-
-
-/* Koleksi Page */
+/* ============================= */
+/* Koleksi Page                  */
+/* ============================= */
 .koleksi-page {
   padding: 2rem;
   text-align: center;
@@ -156,6 +195,7 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: black;
 }
 
 .game-card:hover {
@@ -165,7 +205,8 @@ main {
 
 .game-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -195,8 +236,9 @@ main {
   opacity: 1;
 }
 
-
-/* Game Details Page */
+/* ============================= */
+/* Game Details Page             */
+/* ============================= */
 .game-details-container {
   padding: 2rem;
   max-width: 900px;
@@ -232,15 +274,55 @@ main {
 
 .game-details-text h2,
 .game-details-text h3 {
-  color: #F8C630;
+  color: #FFF8F0;
   margin-top: 1rem;
 }
 
+.famous-teams-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
 
-/* Akun Page */
+.team-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 80px;
+}
+
+.team-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.team-logo:hover {
+  transform: scale(1.1);
+}
+
+.team-name {
+  font-size: 0.8rem;
+  color: #a4a4a4;
+  margin-top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+/* ============================= */
+/* Akun Page                     */
+/* ============================= */
 .akun-container {
   padding: 3rem 2rem;
-  max-width: 1000px; 
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
@@ -249,83 +331,51 @@ main {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
-  color: #ffff;
+  color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
 .akun-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 20px; 
-  justify-content: center; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
 }
-
 
 .user-details-card {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 1.5rem;
   text-align: left;
-  border: 1px solid #F8C630;
+  border: 1px solid #01C8EE;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .user-details-card:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .game-name {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #F8C630;
+  color: #01C8EE;
   text-transform: capitalize;
-  border-bottom: 2px solid #F8C630;
+  border-bottom: 2px solid #01C8EE;
   padding-bottom: 5px;
-  display: inline-block;
-  width: 100%; 
-  text-align: center; 
-}
-
-.detail-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-}
-
-.detail-item:last-child {
-  border-bottom: none;
-}
-
-.label {
-  font-weight: bold;
-  color: #a4a4a4;
-}
-
-.value {
-  color: #fff;
-}
-
-
-@media (max-width: 768px) {
-  .akun-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Card untuk setiap detail game */
-.user-details-card {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  display: flex; /* Menggunakan flexbox untuk logo dan teks */
+  align-items: center; /* Sejajarkan vertikal */
+  gap: 10px; /* Jarak antara logo dan teks */
+  width: 100%;
   text-align: left;
-  border: 1px solid #F8C630; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-logo {
+  width: 35px; /* Atur ukuran logo */
+  height: 35px;
+  object-fit: contain;
 }
 
 .detail-item {
@@ -333,6 +383,7 @@ main {
   justify-content: space-between;
   padding: 0.5rem 0;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  position: relative; /* Penting untuk posisi tombol salin */
 }
 
 .detail-item:last-child {
@@ -348,21 +399,38 @@ main {
   color: #fff;
 }
 
+.copy-button {
+  background-color: transparent;
+  color: #01C8EE;
+  border: 1px solid #01C8EE;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
 
-/* Footer */
+.copy-button:hover {
+  background-color: #01C8EE;
+  color: #fff;
+}
+
+/* ============================= */
+/* Footer                        */
+/* ============================= */
 footer {
   text-align: center;
   padding: 0.1rem !important;
   color: #fff;
   margin-top: auto;
-  background-color: #595a5b !important; 
+  background-color: #101B37 !important;
 }
 
-
-
-/* Responsive Design (Mobile) */
+/* ============================= */
+/* Responsive Design (Mobile)    */
+/* ============================= */
 @media (max-width: 768px) {
-
   /* Navbar */
   .navbar-links {
     flex-direction: column;
@@ -374,46 +442,48 @@ footer {
     width: 100%;
     background-color: #595a5b;
     border-top: 1px solid #777;
-    display: none; 
+    display: none;
   }
 
   .navbar-links.active {
-    display: flex; 
+    display: flex;
   }
 
   .navbar-link {
-    margin: 0.5rem 0; 
+    margin: 0.5rem 0;
   }
-
- 
 
   .navbar-logo {
     font-size: 1.2rem;
   }
 
-  
+  /* Koleksi Page */
   .koleksi-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 
   .game-card {
-    max-width: 400px; 
+    max-width: 400px;
     margin: 0 auto;
   }
 
   /* Game Details Page */
   .game-details-content {
-    flex-direction: column; 
+    flex-direction: column;
   }
 
   .game-details-image {
-    max-width: 100%; 
+    max-width: 100%;
   }
 
   .game-details-text {
     text-align: center;
   }
 
+  /* Akun Page */
+  .akun-grid {
+    grid-template-columns: 1fr;
+  }
 
   .user-details-card {
     padding: 1rem;
